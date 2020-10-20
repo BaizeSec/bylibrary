@@ -27,7 +27,6 @@ theme:
   font:
     text: 'Noto Sans'
     code: 'Source Code Pro'
-site_dir: static
 # Contents
 nav:
   - 白阁简介: index.md
