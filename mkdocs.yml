@@ -2,11 +2,11 @@
 site_name: 白阁文库
 site_description: 白阁文库
 site_author: Bylibrary Team
-site_url: https://Writeup007.github.io/bylibrary/
+site_url: https://github.com/BaizeSec/bylibrary/site/
 
 # Repository
-repo_name: 'Writeup007/bylibrary'
-repo_url: 'https://github.com/Writeup007/bylibrary'
+repo_name: 'BaizeSec/bylibrary'
+repo_url: 'https://github.com/BaizeSec/bylibrary'
 edit_uri: 'blob/master/docs/'
 
 # Copyright
