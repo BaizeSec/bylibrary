@@ -2,7 +2,7 @@
 site_name: 白阁文库
 site_description: 白阁文库
 site_author: BaizeSec Team
-site_url: https://github.com/BaizeSec/bylibrary/site/
+site_url: https://baizesec.github.io/bylibrary/site/
 
 # Repository
 repo_name: 'BaizeSec/bylibrary'
@@ -32,12 +32,12 @@ theme:
 nav:
   - 白阁简介: index.md
   - 白阁-环境库:
-    - 环境库介绍: 白阁-环境库/index.md
+    - 环境库介绍: 白阁-环境库/白阁环境库简介.md
     - Centos7下安装Docker和Vulhub: 白阁-环境库/Centos7下安装Docker和Vulhub.md
     - Strusts2漏洞环境搭建: 白阁-环境库/Strusts2漏洞环境搭建.md
     
   - Web安全:
-    - Web安全简介: Web安全/index.md
+    - Web安全简介: Web安全/Web安全介绍.md
     - Thinkphp:
       - Thinkphp 3.x 漏洞: 
         - Thinkphp 3.2.3 缓存漏洞: Web安全/Thinkphp/Thinkphp 3.x 漏洞/Thinkphp 3.2.3 缓存漏洞.md
@@ -47,7 +47,7 @@ nav:
 
 
   - 安全工具:
-    - 安全工具介绍: 安全工具/index.md
+    - 安全工具介绍: 安全工具/安全工具介绍.md
     - NMAP:
       - nmap基本使用: 安全工具/NMAP/nmap基本使用.md
       - nmap高级使用方法: 安全工具/NMAP/nmap高级使用方法.md
@@ -55,5 +55,6 @@ nav:
       - burp基本使用: 安全工具/BURP/burp基本使用.md
       - burp高级使用方法: 安全工具/BURP/burp高级使用方法.md
 
-
+  - 域渗透:
+    - 域渗透介绍: 域渗透/域渗透介绍.md
 
