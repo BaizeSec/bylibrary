@@ -1,7 +1,7 @@
 # Project Information
 site_name: 白阁文库
 site_description: 白阁文库
-site_author: Bylibrary Team
+site_author: BaizeSec Team
 site_url: https://github.com/BaizeSec/bylibrary/site/
 
 # Repository
@@ -10,7 +10,7 @@ repo_url: 'https://github.com/BaizeSec/bylibrary'
 edit_uri: 'blob/master/docs/'
 
 # Copyright
-copyright: 'Copyright &copy; 2020 - 2020 Bylibrary Team'
+copyright: 'Copyright &copy; 2020 - 2020 BaizeSec Team'
 
 
 # Theme
