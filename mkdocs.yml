@@ -1,16 +1,16 @@
 # Project Information
 site_name: 白阁文库
 site_description: 白阁文库
-site_author: CTF Wiki Team
-# site_url: https://ctf-wiki.github.io/ctf-wiki/
+site_author: Bylibrary Team
+site_url: https://Writeup007.github.io/bylibrary/
 
 # Repository
-repo_name: 'ctf-wiki/ctf-wiki'
-repo_url: 'https://github.com/ctf-wiki/ctf-wiki'
+repo_name: 'Writeup007/bylibrary'
+repo_url: 'https://github.com/Writeup007/bylibrary'
 edit_uri: 'blob/master/docs/'
 
 # Copyright
-copyright: 'Copyright &copy; 2016 - 2020 CTF Wiki Team'
+copyright: 'Copyright &copy; 2020 - 2020 Bylibrary Team'
 
 
 # Theme
