@@ -19,4 +19,3 @@ nmap使用-sV扫描服务器获取服务版本 msf利用步骤如下```
 3.set RHOST targetip(设置目标IP)
 
 4.run(执行攻击) 
-```

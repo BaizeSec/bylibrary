@@ -15,8 +15,12 @@ dedecmsV5.7 SP2
 
 #### 复现
 
-在找回密码处，点击通过安全问题取回![](https://www.bylibrary.cn/wp-content/uploads/2020/10/a2ea6d0d1c946ac0f125cc858abd952a.png) 填写信息并抓包，修改id和userid为想要重置密码的对象，再加上以上分析内容，发包即可得到修改密码url ![](https://www.bylibrary.cn/wp-content/uploads/2020/10/d05ffaa4c133f9a4d2af347cd61b15b1.png) 进入该url，修改密码。 ![](https://www.bylibrary.cn/wp-content/uploads/2020/10/2b3d56c8cf5fdeb4bbaa837ae457fa08.png)
+在找回密码处，点击通过安全问题取回
+
+![](Dedecms%20%E5%89%8D%E5%8F%B0%E4%BB%BB%E6%84%8F%E7%94%A8%E6%88%B7%E5%AF%86%E7%A0%81%E4%BF%AE%E6%94%B9/a2ea6d0d1c946ac0f125cc858abd952a.png) 
+
+填写信息并抓包，修改id和userid为想要重置密码的对象，再加上以上分析内容，发包即可得到修改密码url ![](Dedecms%20%E5%89%8D%E5%8F%B0%E4%BB%BB%E6%84%8F%E7%94%A8%E6%88%B7%E5%AF%86%E7%A0%81%E4%BF%AE%E6%94%B9/d05ffaa4c133f9a4d2af347cd61b15b1.png) 进入该url，修改密码。 ![](Dedecms%20%E5%89%8D%E5%8F%B0%E4%BB%BB%E6%84%8F%E7%94%A8%E6%88%B7%E5%AF%86%E7%A0%81%E4%BF%AE%E6%94%B9/2b3d56c8cf5fdeb4bbaa837ae457fa08.png)
 
 #### 修复意见
 
-改为强类型比较\=
+改为强类型比较

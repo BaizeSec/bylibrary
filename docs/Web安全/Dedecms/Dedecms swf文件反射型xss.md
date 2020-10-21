@@ -11,4 +11,4 @@ DedeCMS 5.7
 
 ### 漏洞POC
 
-![](https://www.bylibrary.cn/wp-content/uploads/2020/09/16009109271.png)
+![](Dedecms%20swf%E6%96%87%E4%BB%B6%E5%8F%8D%E5%B0%84%E5%9E%8Bxss/16009109271.png)

