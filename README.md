@@ -1,5 +1,9 @@
 # 白阁文库
-白阁文库内测版：https://baizesec.github.io/bylibrary/
+此仓库是白泽 Sec 团队对于白阁文库的内测版：
+
+Github访问：https://baizesec.github.io/bylibrary/
+
+服务器访问：http://wiki.bylibrary.cn/
 
 白阁文库文章均来自网络文章综合和团队原创，对于有可溯来源的文章我们将会注明来源，对引用参考内容的文章，我们将会在每篇文章末标注引用参考来源。如有文章来源和参考链接更新不及时的情况，请各位及时批评指正。
 
