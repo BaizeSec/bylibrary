@@ -22,10 +22,16 @@ theme:
     primary: 'white'
     accent: 'red'
     scheme: preference
+
   
   icon:
     logo: 'material/school'
-  font:
-    text: 'Noto Sans'
-    code: 'Source Code Pro'
+  font: false
+    # text: 'Noto Sans'
+    # code: 'Source Code Pro'
 # Contents
+
+
+markdown_extensions:
+  - toc:
+      permalink: true
