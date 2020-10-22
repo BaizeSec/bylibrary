@@ -26,4 +26,4 @@ Spring Cloud Netflix 2.2.0至2.2.3 2.1.0至2.1.5 较旧的不受支持的版本�
 官方已经进行安全升级，受影响用户请尽快升级到修复版本: Spring Cloud Netflix： 2.2.4 2.1.6 较旧的版本应升级到受支持的分支
 ```
 
-![](../images/Spring%20Cloud%20Netflix%20Hystrix%20Dashboard%20SSRF/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200921092519.jpg)
+![](Spring%20Cloud%20Netflix%20Hystrix%20Dashboard%20SSRF/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200921092519.jpg)
