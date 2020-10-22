@@ -1,6 +1,6 @@
 # 尊敬的白客，欢迎入驻白阁
 
-### 注意事项
+## 注意事项
 
 1. 不得私自分享白阁文章内容
 2. 白阁成员需团结友爱，互帮互助。爱中国共产党，爱祖国爱人民，鲜艳的红领巾，飘扬在心中。
@@ -39,27 +39,8 @@
 ## 贡献感谢
 
 感谢以下白客对于白阁文库的贡献：
-福林表哥
 
-Lx
-
-mys3t
-
-hps_fly
-
-NickName
-
-return0
-
-loveU
-
-x77
-
-m_ing
-
-aaaahui
-
-Wizard
+福林表哥、Lx、mys3t、hps_fly、NickName、return0、loveU、x77、m_ing、aaaahui、Wizard
 
 ## 关于文库
 
