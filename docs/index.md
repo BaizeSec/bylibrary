@@ -13,7 +13,7 @@ Github地址：https://github.com/BaizeSec/bylibrary
 
 ## 文库维护团队
 
-<img src="./index/logo.png" alt="白泽Sec-透明" style="zoom: 15%;" />
+<img src="./index/logo.png" alt="白泽Sec-透明" style="zoom: 15%;" div align=right/>
 
 ## 支持团队
 
