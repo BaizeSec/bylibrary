@@ -2,13 +2,31 @@
 
 
 ### 注意事项
-白阁现已永久开源至Github，无需注册，表哥可下载至本地以及满足制作工具等需求，无需求的表哥可随时访问文库网站查阅。
+白阁文库现已永久开源至Github,无需注册，表哥们可下载至本地已满足制作工具等需求
+无需求的表哥可随时访问文库网站查阅
+白阁文库地址：https://wiki.bylibrary.cn
+Github地址：https://github.com/BaizeSec/bylibrary
 
-白阁文库地址：[https://wiki.bylibrary.cn](https://wiki.bylibrary.cn)
+文库每天实时更新，欢迎各位安全团队和白帽子加入我们的公益事业
+有兴趣的表哥可微信关注公众号“白泽Sec”了解更多技术内容
+想入交流群的表哥添加运营小姐姐微信：Echo-630-
 
-Github地址：[https://baizesec.github.io/bylibrary/](https://baizesec.github.io/bylibrary/)
+## 文库维护团队
 
-文库每天实时更新，欢迎各位表哥投稿加入我们的公益事业，有兴趣的表哥可微信关注公众号“白泽Sec”了解更多技术内容，想入交流群的表哥添加运营小姐姐微信：Echo-630-
+<img src="./index/logo.png" alt="白泽Sec-透明" style="zoom: 15%;" />
+
+## 支持团队
+
+![support_team](./index/support_team.png)
+
+## 支持白帽子
+
+感谢以下白客对于白阁文库的贡献：
+（排名不分先后）
+
+
+福林表哥、x77、阿乐、Le、Lx、mys3t、hps_fly、NickName、return0、loveU、m_ing、aaaahui、Wizard
+
 
 ## 错误修改
 
@@ -38,16 +56,10 @@ Github地址：[https://baizesec.github.io/bylibrary/](https://baizesec.github.i
 
 假设我有一篇名为`xss 技术总结.md` 的文章，里面有若干图片，那么图片应该存储在 `xss 技术总结` 这个文件夹内，提交时应当将此文件夹和 .md 文件一同提交。
 
-## 贡献感谢
-
-感谢以下白客对于白阁文库的贡献：
-（排名不分先后）
-
-
-福林表哥、x77、阿乐、Lx、mys3t、hps_fly、NickName、return0、loveU、m_ing、aaaahui、Wizard
 
 ## 关于文库
 
 白阁文库文章均来自网络文章综合和团队原创，对于有可溯来源的文章我们将会注明来源，对引用参考内容的文章，我们将会在每篇文章末标注引用参考来源。如有文章来源和参考链接更新不及时的情况，请各位及时批评指正。
 
 关于白阁文库的文章，目前正在不断的进行更新扩充中...
+
