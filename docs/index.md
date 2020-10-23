@@ -4,8 +4,8 @@
 ### 注意事项
 白阁文库现已永久开源至Github,无需注册，表哥们可下载至本地已满足制作工具等需求
 无需求的表哥可随时访问文库网站查阅
-白阁文库地址：https://wiki.bylibrary.cn
-Github地址：https://github.com/BaizeSec/bylibrary
+白阁文库地址：[https://wiki.bylibrary.cn](https://wiki.bylibrary.cn)
+Github地址：[https://github.com/BaizeSec/bylibrary](https://github.com/BaizeSec/bylibrary)
 
 文库每天实时更新，欢迎各位安全团队和白帽子加入我们的公益事业
 有兴趣的表哥可微信关注公众号“白泽Sec”了解更多技术内容
@@ -13,7 +13,7 @@ Github地址：https://github.com/BaizeSec/bylibrary
 
 ## 文库维护团队
 
-<img src="./index/logo.png" alt="白泽Sec-透明" style="zoom: 15%;" div align=right/>
+<img src="./index/logo.png" alt="白泽Sec" style="zoom: 15%;" />
 
 ## 支持团队
 
