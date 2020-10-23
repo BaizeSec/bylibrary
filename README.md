@@ -7,9 +7,9 @@
 
 此仓库是白泽 Sec 团队对于白阁文库的内测版：
 
-Github访问：https://baizesec.github.io/bylibrary ![Website](https://img.shields.io/website?down_message=offline&label=Website%20Status&up_message=online&url=https%3A%2F%2Fbaizesec.github.io%2Fbylibrary%2F)
+Github访问：https://baizesec.github.io/bylibrary
 
-服务器访问：https://wiki.bylibrary.cn ![Website](https://img.shields.io/website?down_message=offline&label=Website%20Status&up_message=online&url=https%3A%2F%2Fwiki.bylibrary.cn)
+服务器访问：https://wiki.bylibrary.cn
 
 ## 贡献指南
 
