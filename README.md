@@ -19,7 +19,7 @@ Github访问：https://baizesec.github.io/bylibrary ![Website](https://img.shiel
 
 - 文档内容满足基本格式要求
 - 文档的合理性以及准确性
-- 文档图片以及附件的存储格式满足如下要求
+- 文档图片以及附件的存储格式应按照下方文档存储格式要求进行
 
 ### 文档存储格式
 
