@@ -2,7 +2,7 @@
 site_name: 白阁文库
 site_description: 白阁文库,白泽Sec
 site_author: BaizeSec Team
-site_url: http://wiki.bylibrary.cn
+site_url: https://wiki.bylibrary.cn
 
 # Repository
 repo_name: 'BaizeSec/bylibrary'
@@ -30,3 +30,10 @@ theme:
 markdown_extensions:
   - toc: # 锚点
       permalink: true
+
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/BaizeSec
+      name: BaizeSec
