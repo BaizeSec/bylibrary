@@ -6,7 +6,7 @@
 
 白阁文库地址：[https://wiki.bylibrary.cn](https://wiki.bylibrary.cn)
 
-Github地址地址：[https://github.com/BaizeSec/bylibrary](https://github.com/BaizeSec/bylibrary)
+Github地址：[https://baizesec.github.io/bylibrary/](https://baizesec.github.io/bylibrary/)
 
 文库每天实时更新，欢迎各位表哥投稿加入我们的公益事业，有兴趣的表哥可微信关注公众号“白泽Sec”了解更多技术内容，想入交流群的表哥添加运营小姐姐微信：Echo-630-
 
