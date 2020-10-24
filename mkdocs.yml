@@ -1,6 +1,6 @@
 # Project Information
 site_name: 白阁文库
-site_description: 白阁文库
+site_description: 白阁文库,白泽Sec
 site_author: BaizeSec Team
 site_url: http://wiki.bylibrary.cn
 
@@ -12,26 +12,21 @@ edit_uri: 'blob/master/docs/'
 # Copyright
 copyright: 'Copyright &copy; 2020 - 2020 BaizeSec Team'
 
-site_dir: ./../html
 
 # Theme
 theme:
   name: 'material'
   language: 'zh'
+  # 禁止加载 Google 字体
+  font: false
   palette:
     primary: 'white'
     accent: 'red'
     scheme: preference
-
-  
   icon:
     logo: 'material/school'
-  font: false
-    # text: 'Noto Sans'
-    # code: 'Source Code Pro'
-# Contents
 
 
 markdown_extensions:
-  - toc:
+  - toc: # 锚点
       permalink: true
