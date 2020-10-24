@@ -2,11 +2,11 @@
 
 
 ### 注意事项
-白阁现已永久开源至Github，无需注册，表哥可下载至本地已满足制作工具等需求，无需求的表哥可随时访问文库网站查阅。
+白阁现已永久开源至Github，无需注册，表哥可下载至本地以及满足制作工具等需求，无需求的表哥可随时访问文库网站查阅。
 
-白阁文库地址：https://wiki.bylibrary.cn
 
-Github地址：https://github.com/BaizeSec/bylibrary
+白阁文库地址：[https://wiki.bylibrary.cn](https://wiki.bylibrary.cn)
+Github地址地址：[https://github.com/BaizeSec/bylibrary](https://github.com/BaizeSec/bylibrary)
 
 文库每天实时更新，欢迎各位表哥投稿加入我们的公益事业，有兴趣的表哥可微信关注公众号“白泽Sec”了解更多技术内容，想入交流群的表哥添加运营小姐姐微信：Echo-630-
 
