@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: rsandell
+Build-Jdk: 1.8.0_181
+Extension-Name: branch-api
+Specification-Title: This plugin provides an API for multiple branch b
+ ased projects.
+Implementation-Title: branch-api
+Implementation-Version: 2.1.2
+Group-Id: org.jenkins-ci.plugins
+Short-Name: branch-api
+Long-Name: Branch API Plugin
+Url: https://wiki.jenkins.io/display/JENKINS/Branch+API+Plugin
+Compatible-Since-Version: 2.0.0
+Plugin-Version: 2.1.2
+Hudson-Version: 2.107.3
+Jenkins-Version: 2.107.3
+Plugin-Dependencies: cloudbees-folder:6.1.0,scm-api:2.2.7,structs:1.9
+Plugin-Developers: Stephen Connolly:stephenconnolly:
+

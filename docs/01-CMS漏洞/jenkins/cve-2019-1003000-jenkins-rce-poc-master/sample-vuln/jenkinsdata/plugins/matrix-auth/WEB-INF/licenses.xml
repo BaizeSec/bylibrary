@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<l:dependencies xmlns:l='licenses' groupId='org.jenkins-ci.plugins' artifactId='matrix-auth' version='2.3'><l:dependency name='Matrix Authorization Strategy Plugin' groupId='org.jenkins-ci.plugins' artifactId='matrix-auth' version='2.3' url='http://wiki.jenkins-ci.org/display/JENKINS/Matrix+Authorization+Strategy+Plugin'><l:description>Offers matrix-based security authorization strategies (global and per-project).</l:description><l:license name='MIT' url='http://opensource.org/licenses/MIT'/></l:dependency></l:dependencies>

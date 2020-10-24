@@ -1,12 +1,15 @@
-# 尊敬的白客，欢迎入驻白阁
+# 尊敬的白客，欢迎来到白阁
 
-## 注意事项
 
-1. 不得私自分享白阁文章内容
-2. 白阁成员需团结友爱，互帮互助。爱中国共产党，爱祖国爱人民，鲜艳的红领巾，飘扬在心中。
-3. 白阁采用宁杀错不放过思想，只要触发安全防御机制达到阈值，直接永久封禁ID及IP。
-4. 定期对不活跃登录成员清理
+### 注意事项
+白阁现已永久开源至Github，无需注册，表哥可下载至本地已满足制作工具等需求，无需求的表哥可随时访问文库网站查阅。
 
+
+白阁文库地址：https://baizesec.github.io/bylibrary![Website](https://img.shields.io/website?down_message=offline&label=Website%20Status&up_message=online&url=https%3A%2F%2Fbaizesec.github.io%2Fbylibrary%2F)
+
+Github地址：https://wiki.bylibrary.cn![Website](https://img.shields.io/website?down_message=offline&label=Website%20Status&up_message=online&url=https%3A%2F%2Fwiki.bylibrary.cn)
+
+文库每天实时更新，欢迎各位表哥投稿加入我们的公益事业，有兴趣的表哥可微信关注公众号“白泽Sec”了解更多技术内容，想入交流群的表哥添加运营小姐姐微信：Echo-630-
 
 ## 错误修改
 
@@ -39,8 +42,10 @@
 ## 贡献感谢
 
 感谢以下白客对于白阁文库的贡献：
+（排名不分先后）
 
-福林表哥、Lx、mys3t、hps_fly、NickName、return0、loveU、x77、m_ing、aaaahui、Wizard
+
+福林表哥、x77、阿乐、Lx、mys3t、hps_fly、NickName、return0、loveU、m_ing、aaaahui、Wizard
 
 ## 关于文库
 

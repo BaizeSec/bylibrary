@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: stephenc
+Build-Jdk: 1.8.0_152
+Extension-Name: cloudbees-folder
+Specification-Title: This plugin allows users to create "folders" to o
+ rganize jobs. Users can define custom taxonomies (like
+     by project type, organization type etc). Folders are nestable and
+  you can define views within folders. Maintained by CloudBees, Inc.
+Implementation-Title: cloudbees-folder
+Implementation-Version: 6.7
+Group-Id: org.jenkins-ci.plugins
+Short-Name: cloudbees-folder
+Long-Name: Folders Plugin
+Url: https://wiki.jenkins.io/display/JENKINS/CloudBees+Folders+Plugin
+Compatible-Since-Version: 5.2
+Plugin-Version: 6.7
+Hudson-Version: 2.130
+Jenkins-Version: 2.130
+Plugin-Dependencies: credentials:2.1.11;resolution:=optional
+Plugin-Developers: 
+

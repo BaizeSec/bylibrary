@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: danielbeck
+Build-Jdk: 1.8.0_121
+Extension-Name: ssh-credentials
+Specification-Title: Allows storage of SSH credentials in Jenkins
+Implementation-Title: ssh-credentials
+Implementation-Version: 1.14
+Group-Id: org.jenkins-ci.plugins
+Short-Name: ssh-credentials
+Long-Name: SSH Credentials Plugin
+Url: https://wiki.jenkins-ci.org/display/JENKINS/SSH+Credentials+Plugin
+Plugin-Version: 1.14
+Hudson-Version: 1.625
+Jenkins-Version: 1.625
+Plugin-Dependencies: credentials:2.1.17
+Plugin-Developers: Stephen Connolly:stephenconnolly:
+

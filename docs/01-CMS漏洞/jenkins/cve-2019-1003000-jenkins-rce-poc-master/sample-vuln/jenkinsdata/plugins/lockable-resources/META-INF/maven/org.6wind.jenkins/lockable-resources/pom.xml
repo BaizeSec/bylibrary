@@ -1,0 +1,175 @@
+<!--
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Copyright (c) 2013, 6WIND S.A. All rights reserved.                 *
+ *                                                                     *
+ * This file is part of the Jenkins Lockable Resources Plugin and is   *
+ * published under the MIT license.                                    *
+ *                                                                     *
+ * See the "LICENSE.txt" file for more information.                    *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.jenkins-ci.plugins</groupId>
+		<artifactId>plugin</artifactId>
+		<version>2.24</version>
+		<relativePath />
+	</parent>
+
+	<groupId>org.6wind.jenkins</groupId>
+	<artifactId>lockable-resources</artifactId>
+	<version>2.4</version>
+	<packaging>hpi</packaging>
+	<name>Lockable Resources plugin</name>
+	<description>
+		This plugin allows to define lockable resources (such as printers, phones,
+		computers) that can be used by builds. If a build requires an external
+		resource which is already locked, it will wait for the resource to be free.
+	</description>
+	<url>https://wiki.jenkins-ci.org/display/JENKINS/Lockable+Resources+Plugin</url>
+
+	<properties>
+		<!-- First version including TailCall is 1.9, and the same baseline is maintained
+		until 1.14, so let's pick up the greatest -->
+		<workflow.version>1.14</workflow.version>
+		<jenkins.version>1.609.1</jenkins.version>
+		<!-- TODO activate this and fix findbugs errors -->
+		<findbugs.failOnError>false</findbugs.failOnError>
+	</properties>
+
+	<licenses>
+		<license>
+			<name>MIT</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>robin-jarry</id>
+			<name>Robin Jarry</name>
+			<email>robin.jarry@6wind.com</email>
+			<roles>
+				<role>developer</role>
+				<role>maintainer</role>
+			</roles>
+			<timezone>CET</timezone>
+		</developer>
+		<developer>
+			<id>amuniz</id>
+			<name>Antonio Muñiz</name>
+			<email>amuniz@cloudbees.com</email>
+			<roles>
+				<role>developer</role>
+				<role>maintainer</role>
+			</roles>
+			<timezone>CET</timezone>
+		</developer>
+	</developers>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.jenkins-ci.plugins</groupId>
+			<artifactId>mailer</artifactId>
+			<version>1.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jenkins-ci.plugins.workflow</groupId>
+			<artifactId>workflow-step-api</artifactId>
+			<version>${workflow.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jenkins-ci.plugins.workflow</groupId>
+			<artifactId>workflow-support</artifactId>
+			<version>${workflow.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jenkins-ci.plugins</groupId>
+			<artifactId>matrix-project</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jenkins-ci.plugins</groupId>
+			<artifactId>script-security</artifactId>
+			<version>1.26</version>
+		</dependency>
+		<dependency>
+			<groupId>com.infradna.tool</groupId>
+			<artifactId>bridge-method-annotation</artifactId>
+			<version>1.14</version>
+			<optional>true</optional>
+		</dependency>
+
+		<!-- Testing scope -->
+		<dependency>
+			<groupId>org.jenkins-ci.plugins.workflow</groupId>
+			<artifactId>workflow-aggregator</artifactId>
+			<version>${workflow.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jenkins-ci.plugins.workflow</groupId>
+			<artifactId>workflow-support</artifactId>
+			<version>${workflow.version}</version>
+			<classifier>tests</classifier>
+			<scope>test</scope>
+		</dependency>
+		<dependency> <!-- Required by workflow-cps-global-lib (transitive of git-server) -->
+			<groupId>org.jenkins-ci.modules</groupId>
+			<artifactId>sshd</artifactId>
+			<version>1.6</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency><!-- Required when testing against core > 1.575 -->
+			<groupId>org.jenkins-ci.plugins</groupId>
+			<artifactId>junit</artifactId>
+			<version>1.13</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.jenkins-ci.tools</groupId>
+				<artifactId>maven-hpi-plugin</artifactId>
+				<configuration>
+					<loggers>
+						<org.jenkins.plugins.lockableresources>FINE</org.jenkins.plugins.lockableresources>
+					</loggers>
+					<compatibleSinceVersion>2.0</compatibleSinceVersion>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.2</version>
+				<configuration>
+					<updateDependencies>false</updateDependencies>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>repo.jenkins-ci.org</id>
+			<url>http://repo.jenkins-ci.org/public/</url>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>repo.jenkins-ci.org</id>
+			<url>http://repo.jenkins-ci.org/public/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<scm>
+		<connection>scm:git:https://github.com/jenkinsci/lockable-resources-plugin.git</connection>
+		<developerConnection>scm:git:git@github.com:jenkinsci/lockable-resources-plugin.git</developerConnection>
+		<url>https://github.com/jenkinsci/lockable-resources-plugin</url>
+	  <tag>lockable-resources-2.4</tag>
+  </scm>
+
+</project>

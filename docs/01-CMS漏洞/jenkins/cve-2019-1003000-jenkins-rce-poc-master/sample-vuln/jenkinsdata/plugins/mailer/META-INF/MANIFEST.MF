@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: adrien
+Build-Jdk: 1.8.0_181
+Extension-Name: mailer
+Specification-Title: This plugin allows you to configure email notific
+ ations for build results
+Implementation-Title: mailer
+Implementation-Version: 1.23
+Plugin-Class: hudson.tasks.PluginImpl
+Group-Id: org.jenkins-ci.plugins
+Short-Name: mailer
+Long-Name: Jenkins Mailer Plugin
+Url: https://wiki.jenkins.io/display/JENKINS/Mailer
+Minimum-Java-Version: 1.7
+Plugin-Version: 1.23
+Hudson-Version: 1.642.3
+Jenkins-Version: 1.642.3
+Plugin-Dependencies: display-url-api:1.0
+Plugin-Developers: 
+

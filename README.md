@@ -1,11 +1,18 @@
 # 白阁文库
+
+![GitHub last commit](https://img.shields.io/github/last-commit/BaizeSec/bylibrary)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/BaizeSec/bylibrary)
+![GitHub contributors](https://img.shields.io/github/contributors-anon/BaizeSec/bylibrary?color=brightgreen)
+
+
+
 ## 简介
 
 此仓库是白泽 Sec 团队对于白阁文库的内测版：
 
-Github访问：https://baizesec.github.io/bylibrary/
+Github访问：https://baizesec.github.io/bylibrary![Website](https://img.shields.io/website?down_message=offline&label=Website%20Status&up_message=online&url=https%3A%2F%2Fbaizesec.github.io%2Fbylibrary%2F)
 
-服务器访问：http://wiki.bylibrary.cn/
+服务器访问：https://wiki.bylibrary.cn![Website](https://img.shields.io/website?down_message=offline&label=Website%20Status&up_message=online&url=https%3A%2F%2Fwiki.bylibrary.cn)
 
 ## 贡献指南
 
@@ -15,7 +22,7 @@ Github访问：https://baizesec.github.io/bylibrary/
 
 - 文档内容满足基本格式要求
 - 文档的合理性以及准确性
-- 文档图片以及附件的存储格式
+- 文档图片以及附件的存储格式满足如下要求
 
 ### 文档存储格式
 
@@ -36,3 +43,4 @@ Github访问：https://baizesec.github.io/bylibrary/
 白阁文库文章均来自网络文章综合和团队原创，对于有可溯来源的文章我们将会注明来源，对引用参考内容的文章，我们将会在每篇文章末标注引用参考来源。如有文章来源和参考链接更新不及时的情况，请各位及时批评指正。
 
 关于白阁文库的文章，目前正在不断的进行更新扩充中，欢迎各位表哥一同加入，贡献力量。
+

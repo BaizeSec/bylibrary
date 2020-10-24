@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: kohsuke
+Build-Jdk: 1.7.0_07
+Extension-Name: git-server
+Specification-Title: This library plugin provides embedded Git server 
+ capability inside Jenkins
+Implementation-Title: git-server
+Implementation-Version: 1.7
+Group-Id: org.jenkins-ci.plugins
+Short-Name: git-server
+Long-Name: Jenkins GIT server Plugin
+Url: http://wiki.jenkins-ci.org/display/JENKINS/Git+Server+Plugin
+Plugin-Version: 1.7
+Hudson-Version: 1.580.1
+Jenkins-Version: 1.580.1
+Plugin-Dependencies: git-client:1.11.0
+Plugin-Developers: 
+

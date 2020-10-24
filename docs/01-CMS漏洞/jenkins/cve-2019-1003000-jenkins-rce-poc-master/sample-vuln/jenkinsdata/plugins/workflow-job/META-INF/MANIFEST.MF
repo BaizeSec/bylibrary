@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: dnusbaum
+Build-Jdk: 1.8.0_161
+Extension-Name: workflow-job
+Specification-Title: The Jenkins Plugins Parent POM Project
+Implementation-Title: workflow-job
+Implementation-Version: 2.31
+Group-Id: org.jenkins-ci.plugins.workflow
+Short-Name: workflow-job
+Long-Name: Pipeline: Job
+Url: https://wiki.jenkins.io/display/JENKINS/Pipeline+Job+Plugin
+Compatible-Since-Version: 2.26
+Plugin-Version: 2.31
+Hudson-Version: 2.121.1
+Jenkins-Version: 2.121.1
+Plugin-Dependencies: workflow-api:2.32,workflow-step-api:2.16,workflow
+ -support:2.21
+Plugin-Developers: 
+

@@ -1,0 +1,7 @@
+2020-06-05 09:25:16,809 [-]Target Weblogic console address not found!
+2020-06-05 09:25:16,846 [-]The target Weblogic UDDI module default path does not exist!
+2020-06-05 09:25:21,651 [-]Target weblogic not detected CVE-2019-2725
+2020-06-05 09:25:25,827 [-]Target weblogic not detected CVE-2019-2729
+2020-06-05 09:25:26,014 [-]Target weblogic not detected CVE-2017-10271
+2020-06-05 09:25:26,288 [-]Target weblogic not detected CVE-2017-3506
+2020-06-05 09:25:26,338 [+]The target weblogic has a JAVA deserialization vulnerability:CVE-2018-2894
