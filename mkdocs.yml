@@ -37,3 +37,6 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/BaizeSec
       name: BaizeSec
+    - icon: fontawesome/brands/weixin
+      link: https://github.com/BaizeSec
+      name: 微信公众号
