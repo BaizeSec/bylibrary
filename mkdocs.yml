@@ -1,6 +1,7 @@
 # Project Information
 site_name: 白阁文库
-site_description: 白阁文库,白泽Sec
+site_description: 白泽Sec - 专注于信息安全领域的技术研究。白阁文库是白泽Sec团队维护的一个漏洞POC和EXP披露以及漏洞复现的开源项目，欢迎各位表哥访问白阁文库并提出宝贵建议。
+site_keywords: 白泽Sec,白阁文库,白阁wiki,漏洞复现,漏洞利用,漏洞,靶场
 site_author: BaizeSec Team
 site_url: https://wiki.bylibrary.cn
 
