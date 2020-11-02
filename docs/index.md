@@ -21,6 +21,7 @@ Github地址：[https://github.com/BaizeSec/bylibrary](https://github.com/BaizeS
 ## 支持团队
 
 ![support_team](./index/support_team.png)
+<img src="./index/chongshengsec.png" alt="重生信息安全" style="zoom: 33%;" />
 
 ## 支持白帽子
 
