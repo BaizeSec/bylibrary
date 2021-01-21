@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: svanoort
+Build-Jdk: 1.8.0_151
+Extension-Name: pipeline-rest-api
+Specification-Title: Provides a REST API to access pipeline and pipeli
+ ne run data
+Implementation-Title: pipeline-rest-api
+Implementation-Version: 2.10
+Group-Id: org.jenkins-ci.plugins.pipeline-stage-view
+Short-Name: pipeline-rest-api
+Long-Name: Pipeline: REST API Plugin
+Url: https://wiki.jenkins-ci.org/display/JENKINS/Pipeline+Stage+View+P
+ lugin
+Plugin-Version: 2.10
+Hudson-Version: 1.642.3
+Jenkins-Version: 1.642.3
+Plugin-Dependencies: workflow-api:2.15,workflow-job:2.0,workflow-step-
+ api:2.10,workflow-support:2.14,jackson2-api:2.7.3,pipeline-graph-anal
+ ysis:1.1,pipeline-input-step:2.0,pipeline-stage-step:2.2
+Plugin-Developers: 
+

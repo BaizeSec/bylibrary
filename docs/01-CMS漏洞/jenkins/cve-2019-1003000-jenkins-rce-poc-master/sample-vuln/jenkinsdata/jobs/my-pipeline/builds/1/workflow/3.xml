@@ -1,0 +1,25 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<Tag plugin="workflow-support@3.2">
+  <node class="cps.n.StepAtomNode" plugin="workflow-cps@2.61">
+    <parentIds>
+      <string>2</string>
+    </parentIds>
+    <id>3</id>
+    <descriptorId>org.jenkinsci.plugins.workflow.steps.EchoStep</descriptorId>
+  </node>
+  <actions>
+    <cps.a.ArgumentsActionImpl plugin="workflow-cps@2.61">
+      <arguments>
+        <entry>
+          <string>message</string>
+          <wf.a.ArgumentsAction_-NotStoredReason>OVERSIZE_VALUE</wf.a.ArgumentsAction_-NotStoredReason>
+        </entry>
+      </arguments>
+      <isUnmodifiedBySanitization>false</isUnmodifiedBySanitization>
+    </cps.a.ArgumentsActionImpl>
+    <wf.a.TimingAction plugin="workflow-api@2.33">
+      <startTime>1550215293438</startTime>
+    </wf.a.TimingAction>
+    <s.a.LogStorageAction/>
+  </actions>
+</Tag>

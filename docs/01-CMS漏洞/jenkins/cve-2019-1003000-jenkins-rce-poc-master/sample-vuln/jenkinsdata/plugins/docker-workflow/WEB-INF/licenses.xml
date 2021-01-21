@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<l:dependencies xmlns:l='licenses' groupId='org.jenkins-ci.plugins' artifactId='docker-workflow' version='1.17'><l:dependency name='Docker Pipeline' groupId='org.jenkins-ci.plugins' artifactId='docker-workflow' version='1.17' url='https://wiki.jenkins.io/display/JENKINS/Docker+Pipeline+Plugin'><l:description>Build and use Docker containers from pipelines</l:description><l:license name='MIT License' url='https://opensource.org/licenses/MIT'/></l:dependency></l:dependencies>

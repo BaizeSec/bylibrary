@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: danielbeck
+Build-Jdk: 1.8.0_121
+Extension-Name: matrix-auth
+Specification-Title: Offers matrix-based security authorization strate
+ gies (global and per-project).
+Implementation-Title: matrix-auth
+Implementation-Version: 2.3
+Group-Id: org.jenkins-ci.plugins
+Short-Name: matrix-auth
+Long-Name: Matrix Authorization Strategy Plugin
+Url: http://wiki.jenkins-ci.org/display/JENKINS/Matrix+Authorization+S
+ trategy+Plugin
+Compatible-Since-Version: 2.0
+Plugin-Version: 2.3
+Hudson-Version: 2.60.1
+Jenkins-Version: 2.60.1
+Plugin-Dependencies: cloudbees-folder:6.1.0;resolution:=optional
+Plugin-Developers: 
+

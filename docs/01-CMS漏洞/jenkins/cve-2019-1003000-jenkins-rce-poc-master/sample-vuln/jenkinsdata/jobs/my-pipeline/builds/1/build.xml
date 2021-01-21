@@ -1,0 +1,66 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@2.31">
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>user1</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <org.jenkinsci.plugins.workflow.libs.LibrariesAction plugin="workflow-cps-global-lib@2.13">
+      <libraries/>
+    </org.jenkinsci.plugins.workflow.libs.LibrariesAction>
+  </actions>
+  <queueId>5</queueId>
+  <timestamp>1550215290688</timestamp>
+  <startTime>1550215290697</startTime>
+  <result>SUCCESS</result>
+  <duration>3272</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
+    <result>SUCCESS</result>
+    <script>
+import org.buildobjects.process.ProcBuilder
+@Grab(&apos;org.buildobjects:jproc:2.2.3&apos;)
+class Dummy{ }
+
+print new ProcBuilder(&quot;/bin/bash&quot;).withArgs(&quot;-c&quot;,&quot;cat /etc/passwd&quot;).run().getOutputString()
+</script>
+    <loadedScripts class="map"/>
+    <durabilityHint>MAX_SURVIVABILITY</durabilityHint>
+    <timings class="map">
+      <entry>
+        <string>flowNode</string>
+        <long>106686300</long>
+      </entry>
+      <entry>
+        <string>classLoad</string>
+        <long>549263600</long>
+      </entry>
+      <entry>
+        <string>run</string>
+        <long>1192843900</long>
+      </entry>
+      <entry>
+        <string>parse</string>
+        <long>1232449400</long>
+      </entry>
+      <entry>
+        <string>saveProgram</string>
+        <long>394293000</long>
+      </entry>
+    </timings>
+    <sandbox>true</sandbox>
+    <iota>4</iota>
+    <head>1:4</head>
+    <done>true</done>
+    <resumeBlocked>false</resumeBlocked>
+  </execution>
+  <completed>true</completed>
+  <checkouts class="hudson.util.PersistedList"/>
+</flow-build>
