@@ -36,6 +36,7 @@ copyright: Copyright &copy; 2020 - 2021 白泽文库团队
 theme:
   name: null
   custom_dir: material
+  font: false #禁止加载Google字体库
 
   # 404 page
   static_templates:
@@ -67,6 +68,7 @@ plugins:
   - search
   - minify:
       minify_html: true
+  - git-revision-date #显示最后更新时间
 
 # Customization
 extra:
