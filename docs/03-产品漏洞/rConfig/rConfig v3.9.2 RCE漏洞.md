@@ -163,5 +163,3 @@ elif dashboard_request.status_code == 302:
 
 ### 英译中： https://www.anquanke.com/post/id/189795 
 
-### PDF版本：[本地：rConfig v3.9.2 RCE漏洞分析.pdf](./books/rConfig%20v3.9.2%20RCE漏洞分析.pdf)
-

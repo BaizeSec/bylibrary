@@ -1,43 +1,120 @@
-# Project Information
+# Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to
+# deal in the Software without restriction, including without limitation the
+# rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+# sell copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+# IN THE SOFTWARE.
+
+# Project information
 site_name: 白阁文库
-site_keywords: 白泽Sec,白阁文库,白阁wiki,漏洞复现,漏洞利用,漏洞,靶场
-site_description: 白泽Sec - 专注于信息安全领域的技术研究。白阁文库是白泽Sec团队维护的一个漏洞POC和EXP披露以及漏洞复现的开源项目，欢迎各位表哥访问白阁文库并提出宝贵建议。
-site_author: BaizeSec Team
-site_url: https://wiki.bylibrary.cn
+site_url: https://squidfunk.github.io/mkdocs-material/
+site_author: 白泽文库团队
+site_description: 白阁文库是白泽Sec团队维护的一个漏洞POC和EXP披露以及漏洞复现的开源项目，欢迎各位表哥访问白阁文库并提出宝贵建议。
 
 # Repository
-repo_name: 'BaizeSec/bylibrary'
-repo_url: 'https://github.com/BaizeSec/bylibrary'
-edit_uri: 'blob/master/docs/'
+repo_name: BaizeSec/bylibrary
+repo_url: https://github.com/BaizeSec/bylibrary
+edit_uri: ""
 
 # Copyright
-copyright: 'Copyright &copy; 2020 - 2020 BaizeSec Team'
+copyright: Copyright &copy; 2020 - 2021 白泽文库团队
 
-
-# Theme
+# Configuration
 theme:
-  name: 'material'
-  language: 'zh'
-  # 禁止加载 Google 字体
-  font: false
+  name: null
+  custom_dir: material
+
+  # 404 page
+  static_templates:
+    - 404.html
+
+  # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+
+  # Default values, taken from mkdocs_theme.yml
+  language: zh
+  features:
+    # - navigation.instant
+    - navigation.sections
+    - navigation.tabs
   palette:
-    primary: 'white'
-    accent: 'red'
-    scheme: preference
+    scheme: default
+    primary: indigo
+    accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/favicon.png
   icon:
-    logo: 'material/school'
+    logo: logo
 
-
-markdown_extensions:
-  - toc: # 锚点
-      permalink: true
-
+# Plugins
 plugins:
-  - search:
-      lang: jp
+  - search
+  - minify:
+      minify_html: true
 
+# Customization
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/BaizeSec
       name: BaizeSec
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+
+
+
