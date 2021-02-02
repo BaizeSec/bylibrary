@@ -20,14 +20,14 @@
 
 # Project information
 site_name: 白阁文库
-site_url: https://squidfunk.github.io/mkdocs-material/
+site_url: https://wiki.bylibrary.cn/
 site_author: 白泽文库团队
 site_description: 白阁文库是白泽Sec团队维护的一个漏洞POC和EXP披露以及漏洞复现的开源项目，欢迎各位表哥访问白阁文库并提出宝贵建议。
 
 # Repository
-repo_name: BaizeSec/bylibrary
-repo_url: https://github.com/BaizeSec/bylibrary
-edit_uri: ""
+repo_name: 'BaizeSec/bylibrary'
+repo_url: 'https://github.com/BaizeSec/bylibrary'
+edit_uri: 'blob/main/docs/'
 
 # Copyright
 copyright: Copyright &copy; 2020 - 2021 白泽文库团队
