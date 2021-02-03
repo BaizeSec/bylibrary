@@ -1,6 +1,6 @@
 #### ActiveMQ任意文件上传漏洞
 
-该漏洞出现在fileserver应用中,ActiveMQ中的fileserver服务允许用户通过HTTP  PUT方法上传文件到指定目录。Fileserver支持写入文件(不解析jsp),但是支持移动文件(Move)我们可以将jsp的文件PUT到Fileserver下,然后再通过Move指令移动到可执行目录下访问
+该漏洞出现在fileserver应用中，ActiveMQ中的fileserver服务允许用户通过HTTP  PUT方法上传文件到指定目录。Fileserver支持写入文件(不解析jsp),但是支持移动文件(Move)我们可以将jsp的文件PUT到Fileserver下,然后再通过Move指令移动到可执行目录下访问
 
 使用vulhub一键搭建，靶机kali：192.168.1771.37
 
@@ -72,6 +72,3 @@ Content-Length: 329
 
 
 ![7](ActiveMQ任意文件上传漏洞\7.png)
-
-
-
