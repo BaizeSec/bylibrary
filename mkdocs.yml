@@ -73,9 +73,27 @@ plugins:
 # Customization
 extra:
   social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/BaizeSec
-      name: BaizeSec
+    - icon: fontawesome/brands/i春秋
+      link: https://www.ichunqiu.com/
+      name: i春秋
+    - icon: fontawesome/brands/雷神众测
+      link: https://www.bountyteam.com
+      name: 雷神众测
+    - icon: fontawesome/brands/狼组
+      link: https://www.wgpsec.org/
+      name: 狼组
+    - icon: fontawesome/brands/圈子社区
+      link: https://www.secquan.org
+      name: 圈子社区
+    - icon: fontawesome/brands/字节脉搏
+      link: https://ityo.cn/
+      name: 字节脉搏
+    - icon: fontawesome/brands/hack学习呀
+      link: https://index.tesla-space.com/
+      name: hack学习呀
+    - icon: fontawesome/brands/华盟网
+      link: https://www.77169.net/
+      name: 华盟网
 
 # Extensions
 markdown_extensions:
