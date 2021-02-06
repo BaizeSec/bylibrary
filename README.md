@@ -39,7 +39,7 @@ Github访问：https://baizesec.github.io/bylibrary
 
 ##### 示例
 
-![实例](./docs/团队简介/示例.png)
+![示例](./docs/团队简介/示例.png)
 
 #### 加入我们
 
