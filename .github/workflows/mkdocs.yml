@@ -11,18 +11,10 @@ jobs:
     steps:
       - name: Checkout main
         uses: actions/checkout@v2
-      - name: Install Python
-        uses: actions/setup-python@v1
-        with:
-            python-version: 3.8
-      - name: Install plugins
-        run: 
-          pip install mkdocs-git-revision-date-plugin
-
       - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
         # Or use mhausenblas/mkdocs-deploy-gh-pages@nomaterial to build without the mkdocs-material theme
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REQUIREMENTS: requirements.txt
           EXTRA_PACKAGES: build-base
+          REQUIREMENTS: requirements.txt
