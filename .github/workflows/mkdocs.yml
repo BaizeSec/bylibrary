@@ -1,6 +1,11 @@
 name: Publish docs via GitHub Pages
+
+# 触发条件
 on:
   push:
+    branches:
+      - main
+  pull_request:
     branches:
       - main
 
