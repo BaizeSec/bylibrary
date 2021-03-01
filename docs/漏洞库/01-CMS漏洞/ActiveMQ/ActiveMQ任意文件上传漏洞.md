@@ -12,15 +12,15 @@ docker-compose up -d
 
 环境搭建成功，浏览器访问：http://IP:8161
 
-![1](ActiveMQ任意文件上传漏洞\1.png)
+![1](ActiveMQ任意文件上传漏洞/1.png)
 
-![2](ActiveMQ任意文件上传漏洞\2.png)
+![2](ActiveMQ任意文件上传漏洞/2.png)
 
 登录admin账号：默认账号admin/admin，抓包进行修改，使用PUT方法上传文件。ActiveMQ  Web控制台分为三个应用程序：其中admin，api和fileserver，其中admin是管理员页面，api是界面，fileserver是用于存储文件的界面；admin和api需要先登录才能使用，fileserver不需要登录。
 
  上传jsp文件（系统不稳定，有时成功有时失败），
 
-![3](ActiveMQ任意文件上传漏洞\3.png)
+![3](ActiveMQ任意文件上传漏洞/3.png)
 ```
 PUT /fileserver/2.jsp HTTP/1.1
 Host: 192.168.177.137:8161
@@ -53,13 +53,13 @@ Content-Length: 329
 
 
 
-![4](ActiveMQ任意文件上传漏洞\4.png)
+![4](ActiveMQ任意文件上传漏洞/4.png)
 
  使用MOVE方法移动文件，成功的包没截上，再次上传是500回显，文件已经上传成功，访问地址，成功解析jsp
 
-![5](ActiveMQ任意文件上传漏洞\5.png)
+![5](ActiveMQ任意文件上传漏洞/5.png)
 
-![6](ActiveMQ任意文件上传漏洞\6.png)
+![6](ActiveMQ任意文件上传漏洞/6.png)
 
  
 
@@ -71,4 +71,4 @@ Content-Length: 329
 
 
 
-![7](ActiveMQ任意文件上传漏洞\7.png)
+![7](ActiveMQ任意文件上传漏洞/7.png)
