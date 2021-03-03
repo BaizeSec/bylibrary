@@ -22,7 +22,7 @@
 site_name: 白阁文库
 site_url: https://wiki.bylibrary.cn/
 site_author: 白泽文库团队
-site_description: 白阁文库是白泽Sec团队维护的一个漏洞POC和EXP披露以及漏洞复现的开源项目，欢迎各位表哥访问白阁文库并提出宝贵建议。
+site_description: 白阁文库是白泽Sec团队维护的一个漏洞POC和EXP披露以及漏洞复现的开源项目，欢迎各位白帽子访问白阁文库并提出宝贵建议。
 
 # Repository
 repo_name: 'BaizeSec/bylibrary'
