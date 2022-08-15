@@ -45,7 +45,7 @@ Github访问：https://baizesec.github.io/bylibrary
 
 ------
 
-如果你也想成为白阁文库开源力量的一份子，请发送简历至邮箱ByLibrary@163.com。
+如果你也想成为白阁文库开源力量的一份子，请发送简历至邮箱ByLibrary@163.com
 
 
 
